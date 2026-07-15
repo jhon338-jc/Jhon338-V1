@@ -1,315 +1,347 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" data-theme="dark">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio pribadi - Web Developer & Designer">
-    <meta name="keywords" content="portfolio, web developer, designer, Indonesia">
-    <meta name="author" content="Nama Lo">
-    
-    <!-- Security Headers -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; img-src 'self' data: https:; font-src 'self' https://cdnjs.cloudflare.com;">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+    <meta name="description" content="Jhon338 V1 - Personal Data Vault & Financial Manager">
+    <meta name="theme-color" content="#0F0F23">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https:; media-src 'self' data: blob:; connect-src 'self' https:; font-src 'self' data:;">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="DENY">
-    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
-    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
-    
-    <title>Portfolio | Nama Lo</title>
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Custom CSS -->
+    <title>Jhon338 V1 | Personal Data Vault</title>
     <link rel="stylesheet" href="css/style.css">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="assets/images/favicon.png">
 </head>
 <body>
-    <!-- Loading Screen -->
-    <div class="loading-screen">
-        <div class="loader"></div>
+
+    <!-- SPLASH SCREEN -->
+    <div class="splash-screen" id="splashScreen">
+        <div class="splash-content">
+            <div class="splash-icon-wrap">
+                <svg viewBox="0 0 120 120" class="splash-svg">
+                    <defs>
+                        <linearGradient id="splashGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#3B82F6"/>
+                            <stop offset="100%" style="stop-color:#A855F7"/>
+                        </linearGradient>
+                        <filter id="glow">
+                            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                            <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                        </filter>
+                    </defs>
+                    <circle cx="60" cy="60" r="50" fill="none" stroke="url(#splashGrad)" stroke-width="2" filter="url(#glow)"/>
+                    <polygon points="60,25 80,55 70,80 50,80 40,55" fill="none" stroke="url(#splashGrad)" stroke-width="2" filter="url(#glow)"/>
+                    <circle cx="60" cy="55" r="8" fill="url(#splashGrad)"/>
+                    <text x="60" y="110" text-anchor="middle" fill="url(#splashGrad)" font-size="12" font-weight="700" letter-spacing="2">JHON338</text>
+                </svg>
+            </div>
+            <h1 class="splash-title">Jhon338 <span>V1</span></h1>
+            <p class="splash-subtitle">Personal Data Vault</p>
+            <div class="splash-progress">
+                <div class="splash-progress-bar" id="splashProgressBar"></div>
+            </div>
+        </div>
     </div>
 
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="#" class="nav-logo">Portfolio<span>.</span></a>
-            <ul class="nav-menu" id="navMenu">
-                <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
-                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
-                <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
-                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-            <div class="nav-toggle" id="navToggle">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </div>
-    </nav>
+    <!-- MAIN APP -->
+    <div class="app-wrapper" id="appWrapper">
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-container">
-            <div class="hero-content animate-fade-in">
-                <p class="hero-greeting">Halo, saya</p>
-                <h1 class="hero-title">Nama Lengkap Lo</h1>
-                <p class="hero-subtitle">
-                    <span class="typed-text"></span>
-                    <span class="cursor">&nbsp;</span>
-                </p>
-                <p class="hero-description">
-                    Seorang web developer passionate yang fokus menciptakan 
-                    pengalaman digital yang menarik dan fungsional.
-                </p>
-                <div class="hero-buttons">
-                    <a href="#contact" class="btn btn-primary">Hubungi Saya</a>
-                    <a href="#projects" class="btn btn-secondary">Lihat Karya</a>
-                </div>
-                <div class="social-links">
-                    <a href="#" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                </div>
+        <!-- TOP BAR -->
+        <header class="topbar" id="topbar">
+            <div class="topbar-inner">
+                <button class="icon-btn" id="menuBtn" aria-label="Menu">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                        <line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/>
+                    </svg>
+                </button>
+                <h1 class="page-title" id="pageTitle">Dashboard</h1>
+                <button class="icon-btn" id="searchBtn" aria-label="Search">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                    </svg>
+                </button>
             </div>
-            <div class="hero-image animate-float">
-                <div class="image-wrapper">
-                    <img src="assets/images/profile.jpg" alt="Profile" class="profile-img">
-                </div>
+            <div class="search-panel" id="searchPanel">
+                <input type="text" class="search-input" id="searchInput" placeholder="Search everything...">
+                <button class="search-cancel" id="searchCancel">Cancel</button>
             </div>
-        </div>
-        <div class="scroll-indicator">
-            <a href="#about"><i class="fas fa-chevron-down"></i></a>
-        </div>
-    </section>
+        </header>
 
-    <!-- About Section -->
-    <section id="about" class="about section-padding">
-        <div class="container">
-            <h2 class="section-title">Tentang <span>Saya</span></h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>Saya adalah seorang pengembang web dengan pengalaman dalam membangun aplikasi web modern menggunakan teknologi terkini. Passionate tentang clean code, UI/UX design, dan performance optimization.</p>
-                    <div class="about-info">
-                        <div class="info-item">
-                            <span class="info-label">Nama:</span>
-                            <span class="info-value">Nama Lengkap</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-label">Email:</span>
-                            <span class="info-value email-protected" data-user="email" data-domain="domain.com">email [at] domain.com</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-label">Lokasi:</span>
-                            <span class="info-value">Indonesia</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-label">Status:</span>
-                            <span class="info-value status-badge">Available for hire</span>
-                        </div>
+        <!-- SIDEBAR -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+            <div class="sidebar-panel">
+                <div class="sidebar-profile">
+                    <div class="avatar-ring">
+                        <svg viewBox="0 0 60 60">
+                            <defs>
+                                <linearGradient id="avatarGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#3B82F6"/>
+                                    <stop offset="100%" style="stop-color:#A855F7"/>
+                                </linearGradient>
+                            </defs>
+                            <circle cx="30" cy="30" r="28" fill="none" stroke="url(#avatarGrad)" stroke-width="2"/>
+                            <circle cx="30" cy="25" r="8" fill="rgba(255,255,255,0.2)"/>
+                            <ellipse cx="30" cy="45" rx="15" ry="10" fill="rgba(255,255,255,0.15)"/>
+                        </svg>
                     </div>
-                    <a href="#" class="btn btn-primary download-cv" id="downloadCV">
-                        <i class="fas fa-download"></i> Download CV
+                    <div class="profile-info">
+                        <h3>Jhon338</h3>
+                        <span class="badge badge-secure">ENCRYPTED</span>
+                    </div>
+                </div>
+                <nav class="sidebar-nav">
+                    <a href="#dashboard" class="nav-link active" data-page="dashboard">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+                        <span>Dashboard</span>
                     </a>
-                </div>
-                <div class="about-stats">
-                    <div class="stat-item">
-                        <h3>2+</h3>
-                        <p>Tahun Pengalaman</p>
-                    </div>
-                    <div class="stat-item">
-                        <h3>50+</h3>
-                        <p>Project Selesai</p>
-                    </div>
-                    <div class="stat-item">
-                        <h3>30+</h3>
-                        <p>Client Puas</p>
+                    <a href="#vault" class="nav-link" data-page="vault">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/><circle cx="12" cy="16" r="1.5"/></svg>
+                        <span>Data Vault</span>
+                    </a>
+                    <a href="#finance" class="nav-link" data-page="finance">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="2" x2="12" y2="22"/><path d="M17 6H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                        <span>Finance</span>
+                    </a>
+                    <a href="#notes" class="nav-link" data-page="notes">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                        <span>Notes</span>
+                    </a>
+                    <a href="#files" class="nav-link" data-page="files">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+                        <span>Files</span>
+                    </a>
+                    <a href="#settings" class="nav-link" data-page="settings">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                        <span>Settings</span>
+                    </a>
+                </nav>
+                <div class="sidebar-footer">
+                    <div class="lock-status">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+                        <span>AES-256 Encrypted</span>
                     </div>
                 </div>
             </div>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content" id="mainContent">
+
+            <!-- DASHBOARD PAGE -->
+            <section class="page active" id="dashboard-page">
+                <div class="page-inner">
+                    <div class="glass-card welcome-card">
+                        <div>
+                            <h2>Welcome back, <span class="text-gradient">Jhon338</span></h2>
+                            <p class="text-muted">Your vault is secure and encrypted</p>
+                        </div>
+                        <div class="stat-row">
+                            <div class="stat-block"><span class="stat-num" id="dashTotalItems">0</span><span class="stat-lbl">Items</span></div>
+                            <div class="stat-block"><span class="stat-num" id="dashStorage">0 MB</span><span class="stat-lbl">Storage</span></div>
+                        </div>
+                    </div>
+                    <div class="quick-grid">
+                        <button class="glass-card quick-card" data-nav="vault">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                            <span>Add to Vault</span>
+                        </button>
+                        <button class="glass-card quick-card" data-nav="finance">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="12" y1="2" x2="12" y2="22"/><path d="M17 6H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                            <span>Transaction</span>
+                        </button>
+                        <button class="glass-card quick-card" data-nav="notes">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                            <span>New Note</span>
+                        </button>
+                        <button class="glass-card quick-card" data-nav="files">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+                            <span>Upload File</span>
+                        </button>
+                    </div>
+                    <div class="glass-card">
+                        <h3 class="card-heading">Recent Activity</h3>
+                        <div id="activityFeed" class="activity-feed"><p class="empty-msg">No recent activity</p></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- VAULT PAGE -->
+            <section class="page" id="vault-page">
+                <div class="page-inner">
+                    <div class="glass-card">
+                        <div class="card-header-row">
+                            <h3 class="card-heading">Data Vault</h3>
+                            <button class="btn btn-primary btn-sm" id="showVaultForm">+ New Item</button>
+                        </div>
+                        <div class="vault-form-wrap" id="vaultFormWrap" style="display:none;">
+                            <div class="form-grid-2">
+                                <input type="text" class="glass-input" id="vTitle" placeholder="Title">
+                                <select class="glass-input" id="vType">
+                                    <option value="">Type</option>
+                                    <option value="password">Password</option>
+                                    <option value="link">Link / URL</option>
+                                    <option value="text">Text</option>
+                                    <option value="file">File</option>
+                                    <option value="image">Image</option>
+                                    <option value="video">Video</option>
+                                    <option value="document">Document</option>
+                                    <option value="code">Code Snippet</option>
+                                </select>
+                                <input type="text" class="glass-input" id="vUrl" placeholder="URL (optional)">
+                                <input type="file" class="glass-input" id="vFile">
+                            </div>
+                            <textarea class="glass-input mt-2" id="vContent" placeholder="Content / Data..." rows="4"></textarea>
+                            <input type="password" class="glass-input mt-2" id="vPassword" placeholder="Encryption password">
+                            <div class="form-actions mt-2">
+                                <button class="btn btn-primary" id="saveVault">Save Encrypted</button>
+                                <button class="btn btn-ghost" id="cancelVault">Cancel</button>
+                            </div>
+                        </div>
+                        <div id="vaultList" class="item-list mt-3"><p class="empty-msg">Vault is empty</p></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FINANCE PAGE -->
+            <section class="page" id="finance-page">
+                <div class="page-inner">
+                    <div class="glass-card balance-hero">
+                        <div class="balance-header-row">
+                            <span>Total Balance</span>
+                            <button class="icon-btn-sm" id="toggleBalance" title="Show/Hide">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                            </button>
+                        </div>
+                        <h2 class="balance-num" id="totalBalance">Rp 0</h2>
+                        <p class="balance-change" id="balanceChange">+0% this month</p>
+                    </div>
+                    <div class="two-col">
+                        <div class="glass-card mini-stat">
+                            <span class="mini-label">Income</span>
+                            <h3 class="mini-val text-green" id="totalIncome">Rp 0</h3>
+                        </div>
+                        <div class="glass-card mini-stat">
+                            <span class="mini-label">Expense</span>
+                            <h3 class="mini-val text-red" id="totalExpense">Rp 0</h3>
+                        </div>
+                    </div>
+                    <div class="glass-card">
+                        <h3 class="card-heading">New Transaction</h3>
+                        <div class="form-grid-2">
+                            <select class="glass-input" id="txType">
+                                <option value="income">Income (+)</option>
+                                <option value="expense">Expense (-)</option>
+                            </select>
+                            <input type="number" class="glass-input" id="txAmount" placeholder="Amount">
+                            <input type="text" class="glass-input" id="txDesc" placeholder="Description">
+                            <select class="glass-input" id="txCategory">
+                                <option value="">Category</option><option value="salary">Salary</option><option value="business">Business</option><option value="food">Food</option><option value="transport">Transport</option><option value="bills">Bills</option><option value="other">Other</option>
+                            </select>
+                            <input type="date" class="glass-input" id="txDate">
+                        </div>
+                        <button class="btn btn-primary full-width mt-2" id="saveTx">Add Transaction</button>
+                    </div>
+                    <div class="glass-card">
+                        <h3 class="card-heading">History</h3>
+                        <div id="txList" class="item-list"><p class="empty-msg">No transactions</p></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- NOTES PAGE -->
+            <section class="page" id="notes-page">
+                <div class="page-inner">
+                    <div class="glass-card">
+                        <div class="card-header-row">
+                            <h3 class="card-heading">Notes</h3>
+                            <button class="btn btn-primary btn-sm" id="showNoteForm">+ New</button>
+                        </div>
+                        <div id="noteFormWrap" style="display:none;">
+                            <input type="text" class="glass-input" id="noteTitle" placeholder="Title">
+                            <textarea class="glass-input mt-2" id="noteContent" placeholder="Write..." rows="6"></textarea>
+                            <div class="form-actions mt-2">
+                                <button class="btn btn-primary" id="saveNote">Save Note</button>
+                                <button class="btn btn-ghost" id="cancelNote">Cancel</button>
+                            </div>
+                        </div>
+                        <div id="notesList" class="item-list mt-3"><p class="empty-msg">No notes</p></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FILES PAGE -->
+            <section class="page" id="files-page">
+                <div class="page-inner">
+                    <div class="glass-card">
+                        <div class="card-header-row">
+                            <h3 class="card-heading">Files</h3>
+                            <button class="btn btn-primary btn-sm" id="triggerFileUpload">+ Upload</button>
+                        </div>
+                        <input type="file" id="fileUploadInput" multiple style="display:none;">
+                        <div id="filesGrid" class="file-grid mt-3"><p class="empty-msg">No files</p></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SETTINGS PAGE -->
+            <section class="page" id="settings-page">
+                <div class="page-inner">
+                    <div class="glass-card">
+                        <h3 class="card-heading">Settings</h3>
+                        <div class="settings-list">
+                            <div class="setting-row"><span>Theme</span><select class="glass-input" id="themeSelect"><option value="dark">Dark</option><option value="light">Light</option></select></div>
+                            <div class="setting-row"><span>Encryption Key</span><button class="btn btn-ghost btn-sm" id="setupEncryption">Configure</button></div>
+                            <div class="setting-row"><span>Export All Data</span><button class="btn btn-ghost btn-sm" id="exportData">Export</button></div>
+                            <div class="setting-row"><span>Import Backup</span><button class="btn btn-ghost btn-sm" id="importData">Import</button><input type="file" id="importFileInput" style="display:none;"></div>
+                            <div class="setting-row danger"><span>Clear All Data</span><button class="btn btn-danger btn-sm" id="clearAll">Reset</button></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- BOTTOM NAV (Mobile) -->
+        <nav class="bottom-nav" id="bottomNav">
+            <a href="#dashboard" class="bn-item active" data-page="dashboard">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+                <span>Home</span>
+            </a>
+            <a href="#vault" class="bn-item" data-page="vault">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                <span>Vault</span>
+            </a>
+            <a href="#finance" class="bn-item" data-page="finance">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="2" x2="12" y2="22"/><path d="M17 6H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                <span>Finance</span>
+            </a>
+            <a href="#files" class="bn-item" data-page="files">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+                <span>Files</span>
+            </a>
+            <a href="#settings" class="bn-item" data-page="settings">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                <span>Settings</span>
+            </a>
+        </nav>
+
+        <!-- FAB -->
+        <button class="fab" id="fabBtn" aria-label="Quick add">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+
+        <!-- CUSTOM MODAL -->
+        <div class="modal-overlay" id="modalOverlay" style="display:none;">
+            <div class="modal-panel glass-card" id="modalPanel"></div>
         </div>
-    </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills section-padding bg-light">
-        <div class="container">
-            <h2 class="section-title">Keahlian <span>Saya</span></h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <i class="fab fa-html5 skill-icon"></i>
-                    <h3>HTML5</h3>
-                    <div class="skill-bar">
-                        <div class="skill-level" style="width: 95%"></div>
-                    </div>
-                </div>
-                <div class="skill-card">
-                    <i class="fab fa-css3-alt skill-icon"></i>
-                    <h3>CSS3</h3>
-                    <div class="skill-bar">
-                        <div class="skill-level" style="width: 90%"></div>
-                    </div>
-                </div>
-                <div class="skill-card">
-                    <i class="fab fa-js-square skill-icon"></i>
-                    <h3>JavaScript</h3>
-                    <div class="skill-bar">
-                        <div class="skill-level" style="width: 85%"></div>
-                    </div>
-                </div>
-                <div class="skill-card">
-                    <i class="fab fa-react skill-icon"></i>
-                    <h3>React</h3>
-                    <div class="skill-bar">
-                        <div class="skill-level" style="width: 80%"></div>
-                    </div>
-                </div>
-                <div class="skill-card">
-                    <i class="fab fa-node-js skill-icon"></i>
-                    <h3>Node.js</h3>
-                    <div class="skill-bar">
-                        <div class="skill-level" style="width: 75%"></div>
-                    </div>
-                </div>
-                <div class="skill-card">
-                    <i class="fas fa-database skill-icon"></i>
-                    <h3>Database</h3>
-                    <div class="skill-bar">
-                        <div class="skill-level" style="width: 80%"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        <!-- CUSTOM TOAST -->
+        <div class="toast-zone" id="toastZone"></div>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects section-padding">
-        <div class="container">
-            <h2 class="section-title">Project <span>Terbaru</span></h2>
-            <div class="project-filters">
-                <button class="filter-btn active" data-filter="all">Semua</button>
-                <button class="filter-btn" data-filter="web">Web App</button>
-                <button class="filter-btn" data-filter="mobile">Mobile</button>
-                <button class="filter-btn" data-filter="design">Design</button>
-            </div>
-            <div class="projects-grid">
-                <div class="project-card" data-category="web">
-                    <div class="project-img">
-                        <img src="assets/images/project1.jpg" alt="Project 1">
-                        <div class="project-overlay">
-                            <a href="#" class="project-link"><i class="fas fa-link"></i></a>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3>E-Commerce Website</h3>
-                        <p>Full-stack e-commerce platform dengan React & Node.js</p>
-                        <div class="project-tags">
-                            <span>React</span>
-                            <span>Node.js</span>
-                            <span>MongoDB</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card" data-category="mobile">
-                    <div class="project-img">
-                        <img src="assets/images/project2.jpg" alt="Project 2">
-                        <div class="project-overlay">
-                            <a href="#" class="project-link"><i class="fas fa-link"></i></a>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3>Mobile Banking App</h3>
-                        <p>Aplikasi mobile banking dengan Flutter</p>
-                        <div class="project-tags">
-                            <span>Flutter</span>
-                            <span>Firebase</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card" data-category="design">
-                    <div class="project-img">
-                        <img src="assets/images/project3.jpg" alt="Project 3">
-                        <div class="project-overlay">
-                            <a href="#" class="project-link"><i class="fas fa-link"></i></a>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3>UI/UX Design System</h3>
-                        <p>Design system untuk aplikasi enterprise</p>
-                        <div class="project-tags">
-                            <span>Figma</span>
-                            <span>Adobe XD</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    </div>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact section-padding bg-light">
-        <div class="container">
-            <h2 class="section-title">Hubungi <span>Saya</span></h2>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <div class="contact-card">
-                        <i class="fas fa-envelope"></i>
-                        <h3>Email</h3>
-                        <p class="email-protected" data-user="hello" data-domain="namalo.com">hello [at] namalo.com</p>
-                    </div>
-                    <div class="contact-card">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <h3>Lokasi</h3>
-                        <p>Jakarta, Indonesia</p>
-                    </div>
-                    <div class="contact-card">
-                        <i class="fas fa-phone"></i>
-                        <h3>Telepon</h3>
-                        <p class="phone-protected">+62 8xx xxxx xxxx</p>
-                    </div>
-                </div>
-                <form class="contact-form" id="contactForm">
-                    <div class="form-group">
-                        <input type="text" id="name" name="name" required placeholder="Nama Lengkap">
-                    </div>
-                    <div class="form-group">
-                        <input type="email" id="email" name="email" required placeholder="Alamat Email">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" id="subject" name="subject" required placeholder="Subjek">
-                    </div>
-                    <div class="form-group">
-                        <textarea id="message" name="message" rows="5" required placeholder="Pesan Anda"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-submit">
-                        <span>Kirim Pesan</span>
-                        <i class="fas fa-paper-plane"></i>
-                    </button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <p>&copy; 2024 Nama Lo. All rights reserved.</p>
-                <div class="footer-links">
-                    <a href="#" class="footer-link">Privacy Policy</a>
-                    <a href="#" class="footer-link">Terms of Service</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Back to Top Button -->
-    <button id="backToTop" class="back-to-top" aria-label="Back to top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-
-    <!-- Scripts -->
     <script src="js/main.js"></script>
 </body>
 </html>
